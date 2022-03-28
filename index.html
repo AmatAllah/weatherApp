@@ -11,6 +11,13 @@
             footer{
                 margin-top: 300px; background-color: black; color: #FFF ; width:100%; padding:5px; text-align: center;
             }
+           
+            #high , #low , #separator , #endDegree{
+                display: inline-block/*;float:right ;*/ 
+            }
+            #endDegree{
+                font-size: 80px;float:right ; top:20px
+            }
         </style>
 
 
@@ -29,10 +36,19 @@
 
         <h2 id="cityName"></h2> 
         <h6 id="dateNow"></h6>
-        <img  id="weatherImg"/>  <!-- src="images/cloudy.png"-->
+        <img  id="weatherImg"/> <span id="tempStatus" style="font-weight:bold;"> Cloudy</span> <br/><br/> <!-- src="images/cloudy.png"-->
         <div id = "tempText"></div>
 
-        <footer>All Rights Reserved &copy; 2022 Creativa</footer>
+        <button id="btnTempToggleC" class="btn btn-primary">C <sup>O</sup></button>
+        <button id="btnTempToggleF" class="btn btn-warning">F <sup>O</sup></button> 
+
+        <!--High & Low Temperature -->
+        <div id="endDegree">80 ْ</div>
+        <div id="high">50 ْ </div>
+        <span id="separator"> / </span>
+        <div id="low">60 ْ</div>
+
+        <footer>All Rights Reserved &copy; 2022 Creativa N.N</footer>
     </body>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
