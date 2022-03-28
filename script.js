@@ -18,24 +18,30 @@ async function temp(API , date){
 /*****************
  * Toggle Button Temperature
  */
-var fDegree , cDegree ; 
-TempToggleC = document.getElementById('btnTempToggleC').innerHTML 
-TempToggleF  =  document.getElementById('btnTempToggleF').innerHTML 
-tempText  = document.getElementById('tempText').innerHTML
+
 function toggleButton(){
-    if (TempToggleC.addEventListener(click , ()=>{
-        tempText  = (fDegree-32)* .5556;
-        TempToggleC.style.visible = "none"
+     fDegree = 65 ; cDegree=16 ; 
+
+    tempToggleC = document.getElementById('btnTempToggleC')/*.innerHTML*/ ;
+    tempToggleF  =  document.getElementById('btnTempToggleF')/*.innerHTML*/ ; 
+    temperatureText  = document.getElementById('tempText').innerHTML ;
+    if (tempToggleC.addEventListener('click' , ()=>{
+        temperatureText  = ((fDegree-32)* .5556 )+"<sup> O </sup> C";
+        tempToggleC.style.display = "none";
+        tempToggleF.style.display = "inline";
 
     }));
-    if (TempToggleF.addEventListener(click , ()=>{
-        tempText  = (cDegree*1.8)+32;
-        TempToggleF.style.visible = "none"
-
+    if (tempToggleF.addEventListener('click' , ()=>{
+        temperatureText  = ((cDegree*1.8)+32)  +"<sup> O </sup> F";
+        tempToggleF.style.display = "none" ; 
+        tempToggleC.style.display = "inline";
 
     }));
+    return temperatureText;
 
 }
+toggleButton()
+document.getElementById("weatherImg").src="images/cloudy.png"; 
 /*
 Celsius to Fahrenheit
 to c =  (50°F - 32) x .5556 = 10°C
